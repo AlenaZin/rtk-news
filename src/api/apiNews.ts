@@ -3,13 +3,15 @@ import axios from "axios";
 const BASE_URL = import.meta.env.VITE_NEWS_BASE_API_URL;
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
-export const getNews = async (): Promise<NewsType[]> => {
+export const getNews = async (page_number: number = 1, page_size: number = 10): Promise<NewsType[]> => {
   try {
     const response = await axios.get<NewsResponsType>(
-      `${BASE_URL}latest-news`,
+      `${BASE_URL}search`,
       {
         params: {
           apiKey: API_KEY,
+          page_number,
+          page_size
         },
       }
     );
@@ -22,6 +24,7 @@ export const getNews = async (): Promise<NewsType[]> => {
 };
 
 export type NewsResponsType = {
+  status: string
   news: NewsType[]
 };
 
