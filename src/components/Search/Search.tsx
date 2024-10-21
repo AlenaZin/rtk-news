@@ -1,4 +1,3 @@
-import { formatDate } from "../../helpers/formatDate";
 import s from "./styles.module.css";
 
 type SearchProps = {
