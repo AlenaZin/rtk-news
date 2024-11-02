@@ -1,6 +1,6 @@
 import NewsBanner from "../../components/NewsBanner/NewsBanner";
 import s from "./styles.module.css";
-import { CategoriesResponsType, getCategories, getNews, NewsResponsType, NewsType } from "../../api/apiNews";
+import { CategoriesResponsType, getCategories, getNews, NewsResponsType } from "../../api/apiNews";
 import NewsList from "../../components/NewsList/NewsList";
 import { Pagination } from "../../components/Pagination/Pagination";
 import { Categories } from "../../components/Categories/Categories";
