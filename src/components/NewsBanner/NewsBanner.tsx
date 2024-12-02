@@ -2,16 +2,17 @@ import { Image } from "../Image/Image";
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
 import s from "./styles.module.css"
 
-type NewsBannerType = {
+export type NewsBannerType = {
   item: {
     title: string
     published: string
     author: string
     image: string
+    id: string
   }
 }
 
-export const NewsBanner = ({item}: NewsBannerType) => {
+const NewsBanner = ({item}: NewsBannerType) => {
   return (
     <div className={s.banner}>
       <Image image={item.image}/>
@@ -20,3 +21,5 @@ export const NewsBanner = ({item}: NewsBannerType) => {
     </div>
   );
 };
+
+export default NewsBanner

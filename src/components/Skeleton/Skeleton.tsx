@@ -2,16 +2,17 @@
 import s from "./styles.module.css"
 
 type SkeletonType = {
-  counte: number
+  count: number
   type: 'bunner' | 'item'
+  direction: 'column' | 'row'
 }
 
-export const Skeleton = ({counte=1, type='bunner'}: SkeletonType) => {
+export const Skeleton = ({count=1, type='bunner', direction='column'}: SkeletonType) => {
   return (
     <>
-      {counte > 1 ? (
-        <ul className={s.list}>
-          {[...Array(counte)].map((_, index) => (
+      {count > 1 ? (
+        <ul className={direction === 'column' ? s.columnList : s.rowList}>
+          {[...Array(count)].map((_, index) => (
             <li key={index}
             className={type === 'bunner' ? s.bunner : s.item}></li>
           ))}
