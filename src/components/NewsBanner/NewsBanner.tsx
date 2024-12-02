@@ -1,14 +1,14 @@
 import { Image } from "../Image/Image";
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
 import s from "./styles.module.css"
-import { withSkeleton } from "../../helpers/hocs/withSkeleton";
 
-type NewsBannerType = {
+export type NewsBannerType = {
   item: {
     title: string
     published: string
     author: string
     image: string
+    id: string
   }
 }
 
@@ -22,6 +22,4 @@ const NewsBanner = ({item}: NewsBannerType) => {
   );
 };
 
-const NewsBannerWithSkeleton = withSkeleton(NewsBanner, 'bunner', 1)
-
-export default NewsBannerWithSkeleton
+export default NewsBanner
