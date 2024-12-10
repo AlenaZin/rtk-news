@@ -1,16 +1,16 @@
-import { NewsType } from "../../api/apiNews";
+import { getLatestNews, NewsResponsType, NewsType } from "../../api/apiNews";
+import { useFetch } from "../../helpers/hooks/useFetch";
 import BanersList from "../BanersList/BanersList";
 import s from "./styles.module.css"
 
-type LatestNewsProps = {
-  banners: NewsType[] | null
-  isLoading: boolean
-}
 
-export const LatestNews = ({banners, isLoading}: LatestNewsProps) => {
+export const LatestNews = () => {
+
+  const { data, isLoading } = useFetch<NewsResponsType>(getLatestNews);
+
   return (
     <section className={s.section}>
-      <BanersList banners={banners} isLoading={isLoading}/>
+      <BanersList banners={data && data.news} isLoading={isLoading}/>
     </section>
   );
 };
