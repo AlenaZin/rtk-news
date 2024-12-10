@@ -45,6 +45,25 @@ export const getCategories = async (): Promise<CategoriesResponsType> => {
   return { status: 'ERROR', categories: [] }
 };
 
+export const getLatestNews = async (): Promise<NewsResponsType> => {
+  try {
+    const response = await axios.get<NewsResponsType>(
+      `${BASE_URL}latest-news`,
+      {
+        params: {
+          apiKey: API_KEY,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    //throw error
+  }
+
+  return { status: 'ERROR', news: [] }
+};
+
 export type NewsResponsType = {
   status: string
   news: NewsType[]

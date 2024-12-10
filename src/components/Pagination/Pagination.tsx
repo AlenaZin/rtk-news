@@ -1,6 +1,6 @@
 import s from "./styles.module.css";
 
-type PaginationType = {
+export type PaginationType = {
   totalPages: number;
   HandlerNextPage: () => void;
   HandlerPreviousPage: () => void;
