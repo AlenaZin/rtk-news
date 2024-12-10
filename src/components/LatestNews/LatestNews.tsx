@@ -1,4 +1,4 @@
-import { getLatestNews, NewsResponsType, NewsType } from "../../api/apiNews";
+import { getLatestNews, NewsResponsType} from "../../api/apiNews";
 import { useFetch } from "../../helpers/hooks/useFetch";
 import BanersList from "../BanersList/BanersList";
 import s from "./styles.module.css"
